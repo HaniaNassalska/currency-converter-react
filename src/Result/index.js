@@ -2,7 +2,7 @@
 import "./style.css";
 
 const Result = () =>(
-    <p className="result">Kwota: 0.00</p>
+    <p className="result">Kwota: <span className="result__amount">0.00</span></p>
 
 );
 

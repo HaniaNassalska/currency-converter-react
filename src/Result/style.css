@@ -1,5 +1,8 @@
 .result {
-    font-size: 25px;
-    font-weight: 600;
+    font-size: 23px;
     margin-left: 40px;
+}
+
+.result__amount {
+    font-weight: bold;
 }
