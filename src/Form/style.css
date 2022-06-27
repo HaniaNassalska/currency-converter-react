@@ -1,0 +1,38 @@
+.form__legend {
+    padding: 15px;
+}
+
+.form__labelText {
+    width: 100%;
+
+    max-width: 200px;
+    display: inline-block;
+    margin-right: 7px;
+
+}
+
+.form__field {
+    padding: 5px;
+    width: 100%;
+    max-width: 160px;
+
+}
+
+.form__button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin: 30px;
+    font-weight: 500;
+    border: solid yellow;
+}
+
+.form__button:hover {
+    background-color: yellow;
+    color: black;
+    border: solid black;
+}
+
+.form__requaierdInfo {
+    font-size: 12px;
+}
