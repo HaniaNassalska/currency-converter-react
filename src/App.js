@@ -4,13 +4,13 @@ import Header from "./Header";
 import Result from "./Result";
 
 
-
 function App() {
+
   return (
     <Container>
-        <Header title={"Przelicz złotówki na dolary / euro / funty"}/>
-        <Form />
-        <Result />
+      <Header title={"Przelicz złotówki na dolary / euro / funty"} />
+      <Form />
+      <Result />
 
     </Container>
   );

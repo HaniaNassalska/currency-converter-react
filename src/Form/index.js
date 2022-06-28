@@ -2,19 +2,39 @@ import "./style.css";
 import { useState } from "react";
 
 const Form = () => {
+    
     const [amount, setAmount] = useState("");
-    const onInputChange = ({ target }) => setAmount(target.value);
+    const onInputChange = ({ target }) => setAmount(target.value); 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        console.log(`Wpisano kwotę: ${amount}`);
     };
 
 
     const [currency, setCurrency] = useState("");
     const onSelectChange = ({ target }) => setCurrency(target.value);
 
-    console.log(`Wybrano walutę: ${currency}`);
+    const plnAmount= +amount;
+   
+    const calculateResult = (plnAmount, currency) => {
+        const eurRate = 4.68;
+        const usdRate = 4.22;
+        const gbpRate = 5.55;
 
+        switch (currency) {
+            case "USD":
+                return plnAmount / usdRate;
+
+            case "EUR":
+                return plnAmount / eurRate;
+
+            case "GBP":
+                return plnAmount / gbpRate;
+        }
+    };    
+
+const result = calculateResult(plnAmount, currency);
+console.log(result.toFixed(2))
+    
     return (
         <form onSubmit={onFormSubmit}>
             <fieldset>
@@ -47,8 +67,6 @@ const Form = () => {
 
     )
 };
-
-
 
 
 export default Form;
