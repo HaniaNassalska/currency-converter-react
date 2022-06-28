@@ -8,7 +8,7 @@ import Result from "./Result";
 function App() {
   return (
     <Container>
-        <Header />
+        <Header title={"Przelicz złotówki na dolary / euro / funty"}/>
         <Form />
         <Result />
 
