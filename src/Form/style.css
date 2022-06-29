@@ -3,19 +3,22 @@
 }
 
 .form__labelText {
-    width: 100%;
-
-    max-width: 200px;
-    display: inline-block;
-    margin-right: 7px;
-
+    padding: 8px;
+    line-height: normal;
 }
 
 .form__field {
-    padding: 5px;
-    width: 100%;
-    max-width: 160px;
+    display: grid;
+    padding: 8px;
+    max-width: 200px;
+    max-height: 35px;
+    margin: 15px;
+}
 
+@media (max-width: 768px) {
+    .form__field {
+        margin: 5px;
+    }
 }
 
 .form__button {
@@ -37,3 +40,18 @@
     font-size: 12px;
 }
 
+.form__label {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-start: 2;
+    grid-row: 1/3;
+}
+
+@media (max-width: 768px) {
+    .form__label {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+    }
+}

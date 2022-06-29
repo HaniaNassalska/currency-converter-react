@@ -55,17 +55,17 @@ const Form = () => {
                     className="form__legend">
                     Kalkulator walut
                 </legend>
-                <p>
-                    <label>
-                        <span className="form__labelText">Kwota w zł*:</span>
+                
+                    <label className="form__label">
+                        <div className="form__labelText">Kwota w zł:<br/><span className="form__requaierdInfo">(pole obowiązkowe)</span></div>
 
                         <input value={amount} onChange={onInputChange} className="form__field"
                             type="number" name="PLN" min="0" step="any" required />
                     </label>
-                </p>
-                <label>
-                    <span className="form__labelText">Wybierz walutę:</span>
-                </label>
+                
+                <label className="form__label">
+                    <div className="form__labelText">Wybierz walutę:<br/><span className="form__requaierdInfo">(pole obowiązkowe)</span></div>
+               
                 <select value={currency} onChange={onSelectChange} className="form__field">
 
                     <option />
@@ -73,9 +73,10 @@ const Form = () => {
                     <option value="EUR">euro (EUR)</option>
                     <option value="GBP">funt (GBP)</option>
                 </select>
+                </label>
             </fieldset>
             <button className="form__button" onClick={publicResult} >Przelicz!</button>
-            <p className="form__requaierdInfo">*pole obowiązkowe</p>
+            
             
 
 

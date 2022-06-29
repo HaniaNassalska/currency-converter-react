@@ -10,3 +10,17 @@
     max-width: 800px;
 
 }
+
+@media (max-width: 768px) {
+    .container {
+        line-height: 1.8;
+        color: black;
+        background-color: white;
+        font-size: 17px;
+        padding: 20px;
+        border-style: solid;
+        border-color: yellow;
+        margin: 40px auto;
+        max-width: 800px;
+    }
+}

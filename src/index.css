@@ -14,3 +14,10 @@ body {
   margin: 80px;
   word-break: break-word;
 }
+
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+    margin: 15px;
+  }
+}
