@@ -35,16 +35,7 @@ const Form = () => {
         }
     };
 
-
-    const publicResult = () => {
-        const result = calculateResult(amount, currency);
-        
-        console.log(Number(result).toFixed(2));
-        
-    }
-
-
-
+    const result = calculateResult(amount, currency);
 
 
 
@@ -75,9 +66,10 @@ const Form = () => {
                 </select>
                 </label>
             </fieldset>
-            <button className="form__button" onClick={publicResult} >Przelicz!</button>
+            <button className="form__button">Przelicz!</button>
             
-            
+            <p className="form__result">Kwota: <span className="form__result--amount">{Number(result).toFixed(2)}</span></p>
+
 
 
         </form>

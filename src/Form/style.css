@@ -53,3 +53,12 @@
         grid-template-columns: auto;
     }
 }
+
+.form__result {
+    font-size: 23px;
+    margin-left: 40px;
+}
+
+.form__result--amount {
+    font-weight: bold;
+}
