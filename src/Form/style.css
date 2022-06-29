@@ -11,7 +11,7 @@
     display: grid;
     padding: 8px;
     max-width: 200px;
-    max-height: 35px;
+    height: 45px;
     margin: 15px;
 }
 
@@ -44,14 +44,12 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-column-start: 2;
-    grid-row: 1/3;
+    
 }
 
 @media (max-width: 768px) {
     .form__label {
         display: grid;
         grid-template-columns: auto;
-        grid-gap: 10px;
     }
 }
