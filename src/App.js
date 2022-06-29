@@ -5,6 +5,11 @@ import Result from "./Result";
 
 
 function App() {
+  const [result, setResult] = useState([
+    
+]);
+
+
 
   return (
     <Container>
