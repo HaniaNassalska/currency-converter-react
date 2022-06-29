@@ -1,6 +1,8 @@
 import "./style.css";
 import { useState } from "react";
 
+
+
 const Form = () => {
 
     const [amount, setAmount] = useState("");
@@ -33,8 +35,18 @@ const Form = () => {
         }
     };
 
-    const result = calculateResult(amount, currency);
-    console.log(Number(result).toFixed(2))
+
+    const publicResult = () => {
+        const result = calculateResult(amount, currency);
+        
+        console.log(Number(result).toFixed(2));
+        
+    }
+
+
+
+
+
 
     return (
         <form onSubmit={onFormSubmit}>
@@ -62,8 +74,10 @@ const Form = () => {
                     <option value="GBP">funt (GBP)</option>
                 </select>
             </fieldset>
-            <button className="form__button">Przelicz!</button>
+            <button className="form__button" onClick={publicResult} >Przelicz!</button>
             <p className="form__requaierdInfo">*pole obowiązkowe</p>
+            
+
 
         </form>
 
