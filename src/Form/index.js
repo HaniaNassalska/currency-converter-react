@@ -1,7 +1,11 @@
 import "./style.css";
 import { useState } from "react";
 
-
+const currencies = [
+    { short: "EUR", name: "euro", rate: 4.68 },
+    { short: "USD", name: "dolar", rate: 4.22 },
+    { short: "GBP", name: "funt", rate: 5.55 }
+]
 
 const Form = () => {
 
@@ -78,28 +82,27 @@ const Form = () => {
                         </span>
                     </div>
 
-                    <select 
-                    value={currency} 
-                    onChange={onSelectChange} 
-                    className="form__field">
+                    <select
+                        value={currency}
+                        onChange={onSelectChange}
+                        className="form__field">
 
-                        <option />
-                        <option value="USD">dolar (USD)</option>
-                        <option value="EUR">euro (EUR)</option>
-                        <option value="GBP">funt (GBP)</option>
+                        {currencies.map(currency => 
+                            (<option key={currency.short} value={currency.rate}>{currency.name}</option>)
+                            )}
                     </select>
                 </label>
             </fieldset>
             <button className="form__button">
                 Przelicz!
-                </button>
+            </button>
 
             <p className="form__result">
-                Kwota: 
+                Kwota:
                 <span className="form__result--amount">
                     {result}
-                    </span>
-                    </p>
+                </span>
+            </p>
 
         </form>
 
