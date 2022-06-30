@@ -9,11 +9,14 @@ const Form = () => {
     const onInputChange = ({ target }) => setAmount(target.value);
     const onFormSubmit = (event) => {
         event.preventDefault();
+        setResult(Number(resultAmount).toFixed(2))
     };
 
 
     const [currency, setCurrency] = useState("");
     const onSelectChange = ({ target }) => setCurrency(target.value);
+
+    const [result, setResult] = useState("0.00")
 
 
     const calculateResult = (amount, currency) => {
@@ -35,8 +38,7 @@ const Form = () => {
         }
     };
 
-    const result = calculateResult(amount, currency);
-
+    const resultAmount = calculateResult(amount, currency);
 
 
     return (
@@ -46,31 +48,58 @@ const Form = () => {
                     className="form__legend">
                     Kalkulator walut
                 </legend>
-                
-                    <label className="form__label">
-                        <div className="form__labelText">Kwota w zł:<br/><span className="form__requaierdInfo">(pole obowiązkowe)</span></div>
 
-                        <input value={amount} onChange={onInputChange} className="form__field"
-                            type="number" name="PLN" min="0" step="any" required />
-                    </label>
-                
                 <label className="form__label">
-                    <div className="form__labelText">Wybierz walutę:<br/><span className="form__requaierdInfo">(pole obowiązkowe)</span></div>
-               
-                <select value={currency} onChange={onSelectChange} className="form__field">
+                    <div className="form__labelText">
+                        Kwota w zł:
+                        <br />
+                        <span className="form__requaierdInfo">
+                            (pole obowiązkowe)
+                        </span></div>
 
-                    <option />
-                    <option value="USD">dolar (USD)</option>
-                    <option value="EUR">euro (EUR)</option>
-                    <option value="GBP">funt (GBP)</option>
-                </select>
+                    <input
+                        value={amount}
+                        onChange={onInputChange}
+                        className="form__field"
+                        type="number"
+                        name="PLN"
+                        min="0"
+                        step="any"
+                        required
+                    />
+                </label>
+
+                <label className="form__label">
+                    <div className="form__labelText">
+                        Wybierz walutę:
+                        <br />
+                        <span className="form__requaierdInfo">
+                            (pole obowiązkowe)
+                        </span>
+                    </div>
+
+                    <select 
+                    value={currency} 
+                    onChange={onSelectChange} 
+                    className="form__field">
+
+                        <option />
+                        <option value="USD">dolar (USD)</option>
+                        <option value="EUR">euro (EUR)</option>
+                        <option value="GBP">funt (GBP)</option>
+                    </select>
                 </label>
             </fieldset>
-            <button className="form__button">Przelicz!</button>
-            
-            <p className="form__result">Kwota: <span className="form__result--amount">{Number(result).toFixed(2)}</span></p>
+            <button className="form__button">
+                Przelicz!
+                </button>
 
-
+            <p className="form__result">
+                Kwota: 
+                <span className="form__result--amount">
+                    {result}
+                    </span>
+                    </p>
 
         </form>
 
