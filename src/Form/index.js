@@ -1,48 +1,25 @@
 import "./style.css";
 import { useState } from "react";
+import { currencies } from "./currencies";
 
-const currencies = [
-    { short: "EUR", name: "euro", rate: 4.68 },
-    { short: "USD", name: "dolar", rate: 4.22 },
-    { short: "GBP", name: "funt", rate: 5.55 }
-]
 
-const Form = () => {
+
+const Form = ({calculateResult, result}) => {
+
+
+    const [currency, setCurrency] = useState(currencies[0].short);
+    const onSelectChange = ({ target }) => setCurrency(target.value);
 
     const [amount, setAmount] = useState("");
     const onInputChange = ({ target }) => setAmount(target.value);
+
+
     const onFormSubmit = (event) => {
         event.preventDefault();
-        setResult(Number(resultAmount).toFixed(2))
+        calculateResult(amount, currency);
     };
 
 
-    const [currency, setCurrency] = useState("");
-    const onSelectChange = ({ target }) => setCurrency(target.value);
-
-    const [result, setResult] = useState("0.00")
-
-
-    const calculateResult = (amount, currency) => {
-        const eurRate = 4.68;
-        const usdRate = 4.22;
-        const gbpRate = 5.55;
-
-        switch (currency) {
-            case "USD":
-                return amount / usdRate;
-
-            case "EUR":
-                return amount / eurRate;
-
-            case "GBP":
-                return amount / gbpRate;
-            default:
-                return ("0.00")
-        }
-    };
-
-    const resultAmount = calculateResult(amount, currency);
 
 
     return (
@@ -87,9 +64,9 @@ const Form = () => {
                         onChange={onSelectChange}
                         className="form__field">
 
-                        {currencies.map(currency => 
-                            (<option key={currency.short} value={currency.rate}>{currency.name}</option>)
-                            )}
+                        {currencies.map(currency =>
+                            (<option key={currency.short} value={currency.short}>{currency.name}</option>)
+                        )}
                     </select>
                 </label>
             </fieldset>
@@ -98,10 +75,14 @@ const Form = () => {
             </button>
 
             <p className="form__result">
-                Kwota:
-                <span className="form__result--amount">
-                    {result}
-                </span>
+                Kwota: 
+                
+                {result !== undefined && ( <span className="form__result--amount">
+         
+              {(result.resultValue).toFixed(2)} {result.currency}
+            </span>
+          )}
+              
             </p>
 
         </form>
