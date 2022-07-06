@@ -29,7 +29,7 @@ function App() {
         calculateResult={calculateResult}
         result={result}
       />
-      <Footer footerContent={"Kursy walut z dnia 28.06.2022 r."}/>
+      <Footer footerContent={"Kursy walut z dnia 28.06.2022 r."} />
     </Container>
   );
 }
