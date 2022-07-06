@@ -4,7 +4,7 @@ import { currencies } from "./currencies";
 
 
 
-const Form = ({calculateResult, result}) => {
+const Form = ({ calculateResult, result }) => {
 
 
     const [currency, setCurrency] = useState(currencies[0].short);
@@ -53,9 +53,7 @@ const Form = ({calculateResult, result}) => {
                 <label className="form__label">
                     <div className="form__labelText">
                         Wybierz walutę:
-                        <br />
                         <span className="form__requaierdInfo">
-                            (pole obowiązkowe)
                         </span>
                     </div>
 
@@ -75,14 +73,14 @@ const Form = ({calculateResult, result}) => {
             </button>
 
             <p className="form__result">
-                Kwota: 
-                
-                {result !== undefined && ( <span className="form__result--amount">
-         
-              {(result.resultValue).toFixed(2)} {result.currency}
-            </span>
-          )}
-              
+                Kwota:
+
+                {result !== undefined && (<span className="form__result--amount">
+
+                    {(result.resultValue).toFixed(2)} {result.currency}
+                </span>
+                )}
+
             </p>
 
         </form>
