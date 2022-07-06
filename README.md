@@ -10,7 +10,6 @@ I made it as one of the tasks during the Front-end developer course (youcode.pl)
 - CSS
 - JavaScript
 
-## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
