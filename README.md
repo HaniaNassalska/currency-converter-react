@@ -2,7 +2,7 @@
 This is my next little project, in which you can convert Polish zloty to EUR, USD or GBP.
 I made it as one of the tasks during the Front-end developer course (youcode.pl), which I’ve been attending.
 ## How does it looks like?
-![How does it looks like?](C:\dev\currency-converter-react\reademe.gif)
+![How does it looks like?](https://github.com/HaniaNassalska/currency-converter-react/blob/main/reademe.gif)
 ## [Demo version](https://hanianassalska.github.io/currency-converter-react/)
 ## What did I use?
 - HTML
