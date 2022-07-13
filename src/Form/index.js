@@ -34,7 +34,7 @@ const Form = ({ calculateResult, result }) => {
                     <div className="form__labelText">
                         Kwota w zł:
                         <br />
-                        <span className="form__requaierdInfo">
+                        <span className="form__requiredInfo">
                             (pole obowiązkowe)
                         </span></div>
 
