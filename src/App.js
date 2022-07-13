@@ -5,8 +5,6 @@ import Header from "./Header";
 import { currencies } from "./currencies";
 import { useState } from "react";
 
-
-
 function App() {
 
   const [result, setResult] = useState();

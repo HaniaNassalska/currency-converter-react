@@ -2,10 +2,7 @@ import "./style.css";
 import { useState } from "react";
 import { currencies } from "../currencies";
 
-
-
 const Form = ({ calculateResult, result }) => {
-
 
     const [currency, setCurrency] = useState(currencies[0].short);
     const onSelectChange = ({ target }) => setCurrency(target.value);
@@ -13,14 +10,10 @@ const Form = ({ calculateResult, result }) => {
     const [amount, setAmount] = useState("");
     const onInputChange = ({ target }) => setAmount(target.value);
 
-
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult(amount, currency);
     };
-
-
-
 
     return (
         <form onSubmit={onFormSubmit}>
@@ -36,7 +29,8 @@ const Form = ({ calculateResult, result }) => {
                         <br />
                         <span className="form__requiredInfo">
                             (pole obowiązkowe)
-                        </span></div>
+                        </span>
+                    </div>
 
                     <input
                         value={amount}
@@ -75,18 +69,14 @@ const Form = ({ calculateResult, result }) => {
             <p className="form__result">
                 Kwota:
 
-                {result !== undefined && (<span className="form__result--amount">
-
-                    {(result.resultValue).toFixed(2)} {result.currency}
-                </span>
+                {result !== undefined && (
+                    <span className="form__result--amount">
+                        {(result.resultValue).toFixed(2)} {result.currency}
+                    </span>
                 )}
-
             </p>
-
         </form>
-
     )
 };
-
 
 export default Form;
