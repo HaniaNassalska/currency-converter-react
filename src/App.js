@@ -2,7 +2,7 @@ import Container from "./Container";
 import Form from "./Form";
 import Footer from "./Footer";
 import Header from "./Header";
-import { currencies } from "./Form/currencies";
+import { currencies } from "./currencies";
 import { useState } from "react";
 
 
