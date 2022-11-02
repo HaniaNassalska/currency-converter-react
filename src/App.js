@@ -1,10 +1,10 @@
-import Aside from "./Aside";
+import Clock from "./Clock";
 import Container from "./Container";
 import Form from "./Form";
 import Footer from "./Footer";
 import Header from "./Header";
 import { currencies } from "./currencies";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
 
@@ -21,34 +21,9 @@ function App() {
     });
   }
 
-  const [currentDate, setCurrentDate] = useState(new Date());
-
-  useEffect(() => {
-    const currentDateId = setInterval(() => {
-      (setCurrentDate(new Date()));
-    }, 500);
-    return () => {
-      clearInterval(currentDateId);
-    };
-  },);
-
-  const [currentTime, setCurrentTime] = useState(new Date());
-
-  useEffect(() => {
-    const currentTimeId = setInterval(() => {
-      (setCurrentTime(new Date()));
-    }, 500);
-    return () => {
-      clearInterval(currentTimeId);
-    };
-  },);
-
   return (
     <Container>
-      <Aside
-        asideContentDate={currentDate.toLocaleDateString("pl-PL", { weekday: "long", day: "numeric", month: "long" })}
-        asideContentHour={currentTime.toLocaleString("pl-PL", { hour: "numeric", minute: "numeric", second: "numeric" })}
-      />
+      <Clock/>
       <Header title={"Przelicz złotówki na dolary / euro / funty"} />
       <Form
         calculateResult={calculateResult}
