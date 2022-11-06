@@ -4,12 +4,6 @@ I made it as one of the tasks during the Front-end developer course (youcode.pl)
 ## How does it looks like?
 ![How does it looks like?](https://github.com/HaniaNassalska/currency-converter-react/blob/main/readme.gif)
 ## [Demo version](https://hanianassalska.github.io/currency-converter-react/)
-## What did I use?
-- HTML
-- BEM
-- CSS
-- JavaScript
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
