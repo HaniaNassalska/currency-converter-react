@@ -1,4 +1,15 @@
-import "./style.css";
+import { 
+    StyledForm,
+    StyledFieldset, 
+    StyledLegend,
+    StyledLebel,
+    StyledLabelText,
+    StyledField,
+    StyledButton,
+    StyledInfo,
+    StyledResult,
+    StyledAmount 
+} from "./styled";
 import { useState } from "react";
 import { currencies } from "../currencies";
 
@@ -16,66 +27,64 @@ const Form = ({ calculateResult, result }) => {
     };
 
     return (
-        <form onSubmit={onFormSubmit}>
-            <fieldset>
-                <legend
-                    className="form__legend">
+        <StyledForm onSubmit={onFormSubmit}>
+            <StyledFieldset>
+                <StyledLegend>
                     Kalkulator walut
-                </legend>
+                </StyledLegend>
 
-                <label className="form__label">
-                    <div className="form__labelText">
+                <StyledLebel>
+                    <StyledLabelText>
                         Kwota w zł:
-                        <br />
-                        <span className="form__requiredInfo">
+                        <StyledInfo>
                             (pole obowiązkowe)
-                        </span>
-                    </div>
+                        </StyledInfo>
+                    </StyledLabelText>
 
-                    <input
+                    <StyledField
                         value={amount}
                         onChange={onInputChange}
-                        className="form__field"
                         type="number"
                         name="PLN"
                         min="0"
                         step="any"
                         required
                     />
-                </label>
+                </StyledLebel>
 
-                <label className="form__label">
-                    <div className="form__labelText">
+                <StyledLebel>
+                    <StyledLabelText>
                         Wybierz walutę:
-                        <span className="form__requaierdInfo">
-                        </span>
-                    </div>
+                    </StyledLabelText>
 
-                    <select
+                    <StyledField
+                        as="select"                        
                         value={currency}
                         onChange={onSelectChange}
-                        className="form__field">
-
+                       >
                         {currencies.map(currency =>
-                            (<option key={currency.short} value={currency.short}>{currency.name}</option>)
+                            (<option 
+                            key={currency.short} 
+                            value={currency.short}>
+                            {currency.name}
+                            </option>)
                         )}
-                    </select>
-                </label>
-            </fieldset>
-            <button className="form__button">
+                    </StyledField>
+                </StyledLebel>
+            </StyledFieldset>
+            <StyledButton>
                 Przelicz!
-            </button>
+            </StyledButton>
 
-            <p className="form__result">
+            <StyledResult>
                 Kwota:
-
                 {result !== undefined && (
-                    <span className="form__result--amount">
+                    <StyledAmount>
                         {(result.resultValue).toFixed(2)} {result.currency}
-                    </span>
+                    </StyledAmount>
                 )}
-            </p>
-        </form>
+            </StyledResult>
+        </StyledForm>
     )
 };
 
