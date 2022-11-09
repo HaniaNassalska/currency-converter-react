@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import theme from "../theme";
 
 export const StyledContainer = styled.main`
     line-height: 1.8;

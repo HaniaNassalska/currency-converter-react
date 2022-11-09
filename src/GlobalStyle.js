@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components";
+import backgroundImage from "./backgroundImage.png"
+
+export const GlobaleStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
 }
@@ -8,7 +12,7 @@ html {
 
 body {
   font-family: "Red Hat Mono", sans-serif;
-  background-image: url("backgroundImage.png");
+  background-image: url("${backgroundImage}");
   background-position: center;
   background-size: cover;
   margin: 80px;
@@ -21,3 +25,4 @@ body {
     margin: 15px;
   }
 }
+`
