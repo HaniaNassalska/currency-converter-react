@@ -3,14 +3,14 @@ import styled from "styled-components"
 export const StyledForm = styled.form`
 `
 
-export const StyledFieldset = styled.fieldset`
+export const Fieldset = styled.fieldset`
 `
 
-export const StyledLegend = styled.legend`
+export const Legend = styled.legend`
 padding: 15px;
 `
 
-export const StyledLebel = styled.label`
+export const Lebel = styled.label`
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
@@ -22,7 +22,7 @@ export const StyledLebel = styled.label`
     }
 `
 
-export const StyledLabelText = styled.div`
+export const LabelText = styled.div`
     padding: 20px;
     line-height: normal;
 
@@ -31,7 +31,7 @@ export const StyledLabelText = styled.div`
     }
 `
 
-export const StyledField = styled.input`
+export const Field = styled.input`
     display: grid;
     padding: 8px;
     max-width: 200px;
@@ -43,7 +43,7 @@ export const StyledField = styled.input`
     }
 `
 
-export const StyledButton = styled.button`
+export const Button = styled.button`
     background-color: ${({theme})=> theme.colors.black};
     color: ${({theme})=> theme.colors.white};
     padding: 10px;
@@ -58,16 +58,16 @@ export const StyledButton = styled.button`
     }
 `
 
-export const StyledInfo = styled.p`
+export const Info = styled.p`
     font-size: 12px;
 `
 
-export const StyledResult = styled.p`
+export const Result = styled.p`
     font-size: 23px;
     margin-left: 40px;
 `
 
-export const StyledAmount = styled.span`
+export const Amount = styled.span`
     font-weight: 700;
 `
 

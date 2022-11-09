@@ -1,14 +1,14 @@
 import { 
     StyledForm,
-    StyledFieldset, 
-    StyledLegend,
-    StyledLebel,
-    StyledLabelText,
-    StyledField,
-    StyledButton,
-    StyledInfo,
-    StyledResult,
-    StyledAmount 
+    Fieldset, 
+    Legend,
+    Lebel,
+    LabelText,
+    Field,
+    Button,
+    Info,
+    Result,
+    Amount 
 } from "./styled";
 import { useState } from "react";
 import { currencies } from "../currencies";
@@ -28,20 +28,20 @@ const Form = ({ calculateResult, result }) => {
 
     return (
         <StyledForm onSubmit={onFormSubmit}>
-            <StyledFieldset>
-                <StyledLegend>
+            <Fieldset>
+                <Legend>
                     Kalkulator walut
-                </StyledLegend>
+                </Legend>
 
-                <StyledLebel>
-                    <StyledLabelText>
+                <Lebel>
+                    <LabelText>
                         Kwota w zł:
-                        <StyledInfo>
+                        <Info>
                             (pole obowiązkowe)
-                        </StyledInfo>
-                    </StyledLabelText>
+                        </Info>
+                    </LabelText>
 
-                    <StyledField
+                    <Field
                         value={amount}
                         onChange={onInputChange}
                         type="number"
@@ -50,14 +50,14 @@ const Form = ({ calculateResult, result }) => {
                         step="any"
                         required
                     />
-                </StyledLebel>
+                </Lebel>
 
-                <StyledLebel>
-                    <StyledLabelText>
+                <Lebel>
+                    <LabelText>
                         Wybierz walutę:
-                    </StyledLabelText>
+                    </LabelText>
 
-                    <StyledField
+                    <Field
                         as="select"                        
                         value={currency}
                         onChange={onSelectChange}
@@ -69,21 +69,21 @@ const Form = ({ calculateResult, result }) => {
                             {currency.name}
                             </option>)
                         )}
-                    </StyledField>
-                </StyledLebel>
-            </StyledFieldset>
-            <StyledButton>
+                    </Field>
+                </Lebel>
+            </Fieldset>
+            <Button>
                 Przelicz!
-            </StyledButton>
+            </Button>
 
-            <StyledResult>
+            <Result>
                 Kwota:
                 {result !== undefined && (
-                    <StyledAmount>
+                    <Amount>
                         {(result.resultValue).toFixed(2)} {result.currency}
-                    </StyledAmount>
+                    </Amount>
                 )}
-            </StyledResult>
+            </Result>
         </StyledForm>
     )
 };
