@@ -5,10 +5,12 @@ import Form from "./Form";
 import Footer from "./Footer";
 import Header from "./Header";
 import ExtraContentContainer from "./ExtraContentContainer";
+import useCurrencies from "./useCurrencies";
 import { currencies } from "./currencies";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
+  const ratesData = useCurrencies();
 
   const [result, setResult] = useState();
 
@@ -23,31 +25,6 @@ function App() {
     });
   }
 
-  const currenciesDate = () => (async () => {
-    try {
-      const response = await fetch("https://api.exchangerate.host/latest?base=PLN");
-      if (!response.ok) {
-        throw new Error(response.statusText);
-      }
-
-      const currenciesList = await response.json();
-      const currenciesLoadingDate = await currenciesList.date;
-      return currenciesLoadingDate;
-    }
-    catch (error) {
-      console.error(error)
-    }
-  })();
-  console.log(currenciesDate());
-
-  const [ratesData, setRatesData] = useState({ loading: true, error: false, rate: "", date: "" })
-  useEffect(() => {
-    setRatesData({ loading: true, error: false, rate: "", date: "" });
-    setTimeout(() => {
-      setRatesData({ loading: false, error: false, rate: "", date: "" });
-    }, 1000);
-  }, []);
-
   return (
     <Container>
       <Clock />
@@ -58,7 +35,7 @@ function App() {
             <ExtraContentContainer text={"Trwa pobieranie danych. Poczekaj chwilę..."} />)
         } else if (ratesData.error === true) {
           return (
-            <ExtraContentContainer text={"Coś poszło nie tak... Spróbuj później."} />
+            <ExtraContentContainer text={"Coś poszło nie tak. Spróbuj później..."} />
           )
         } else {
           return (
@@ -72,7 +49,7 @@ function App() {
       })()}
       <Footer
         footerContent={"Kursy walut z dnia:"}
-        footerDate={""} />
+        footerDate={ratesData.date} />
     </Container>
   );
 }
