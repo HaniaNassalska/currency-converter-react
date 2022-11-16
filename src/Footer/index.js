@@ -1,7 +1,7 @@
 import { StyledFooter } from "./styled";
 
-const Footer = ({ footerContent }) => (
-    <StyledFooter> {footerContent} </StyledFooter>
+const Footer = ({ footerContent, footerDate }) => (
+    <StyledFooter> {footerContent} {footerDate} </StyledFooter>
 )
 
 export default Footer;
