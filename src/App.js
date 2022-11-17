@@ -45,8 +45,9 @@ function App() {
 
       })()}
       <Footer
-        footerContent={"Kursy walut z dnia:"}
-        footerDate={ratesData.date} />
+        footerDateContent={"Kursy walut z dnia:"}
+        footerDate={ratesData.date}
+        footerExtraContent={"Źródło danych: exchangerate.host (dostarczane dane walutowe pochodzą od dostawców danych finansowych i banków, w tym Europejskiego Banku Centralnego). "} />
     </Container>
   );
 }
