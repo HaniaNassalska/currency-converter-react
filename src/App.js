@@ -6,21 +6,18 @@ import Footer from "./Footer";
 import Header from "./Header";
 import ExtraContentContainer from "./ExtraContentContainer";
 import useCurrencies from "./useCurrencies";
-import { currencies } from "./currencies";
 import { useState } from "react";
 
 function App() {
   const ratesData = useCurrencies();
-
+  
   const [result, setResult] = useState();
 
   const calculateResult = (amount, currency) => {
-    const rate = currencies
-      .find(({ short }) => short === currency)
-      .rate;
+    const rate = ratesData.rates[currency]
 
     setResult({
-      resultValue: +amount / rate,
+      resultValue: +amount * rate,
       currency
     });
   }
