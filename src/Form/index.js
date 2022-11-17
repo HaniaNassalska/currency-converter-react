@@ -11,11 +11,13 @@ import {
     Amount 
 } from "./styled";
 import { useState } from "react";
-import { currencies } from "../currencies";
+import useCurrencies from "../useCurrencies";
 
 const Form = ({ calculateResult, result }) => {
+    
+    const ratesData = useCurrencies();
 
-    const [currency, setCurrency] = useState(currencies[0].short);
+    const [currency, setCurrency] = useState("USD");
     const onSelectChange = ({ target }) => setCurrency(target.value);
 
     const [amount, setAmount] = useState("");
@@ -62,11 +64,11 @@ const Form = ({ calculateResult, result }) => {
                         value={currency}
                         onChange={onSelectChange}
                        >
-                        {currencies.map(currency =>
+                        {Object.keys(ratesData.rates).map(rate =>
                             (<option 
-                            key={currency.short} 
-                            value={currency.short}>
-                            {currency.name}
+                            key={rate} 
+                            value={rate}>
+                            {rate}
                             </option>)
                         )}
                     </Field>
