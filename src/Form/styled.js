@@ -2,10 +2,8 @@ import styled from "styled-components"
 
 export const StyledForm = styled.form`
 `
-
 export const Fieldset = styled.fieldset`
 `
-
 export const Legend = styled.legend`
 padding: 15px;
 `
@@ -14,7 +12,6 @@ export const Lebel = styled.label`
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-
 
     @media (max-width: ${({theme})=> theme.breakpoint.mobileMax}px) {
         display: grid;

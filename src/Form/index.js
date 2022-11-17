@@ -1,6 +1,6 @@
-import { 
+import {
     StyledForm,
-    Fieldset, 
+    Fieldset,
     Legend,
     Lebel,
     LabelText,
@@ -8,13 +8,13 @@ import {
     Button,
     Info,
     Result,
-    Amount 
+    Amount
 } from "./styled";
 import { useState } from "react";
 import useCurrencies from "../useCurrencies";
 
 const Form = ({ calculateResult, result }) => {
-    
+
     const ratesData = useCurrencies();
 
     const [currency, setCurrency] = useState("USD");
@@ -34,7 +34,6 @@ const Form = ({ calculateResult, result }) => {
                 <Legend>
                     Kalkulator walut
                 </Legend>
-
                 <Lebel>
                     <LabelText>
                         Kwota w zł:
@@ -42,7 +41,6 @@ const Form = ({ calculateResult, result }) => {
                             (pole obowiązkowe)
                         </Info>
                     </LabelText>
-
                     <Field
                         value={amount}
                         onChange={onInputChange}
@@ -53,23 +51,21 @@ const Form = ({ calculateResult, result }) => {
                         required
                     />
                 </Lebel>
-
                 <Lebel>
                     <LabelText>
                         Wybierz walutę:
                     </LabelText>
-
                     <Field
-                        as="select"                        
+                        as="select"
                         value={currency}
                         onChange={onSelectChange}
-                       >
+                    >
                         {Object.keys(ratesData.rates).map(rate =>
-                            (<option 
-                            key={rate} 
+                        (<option
+                            key={rate}
                             value={rate}>
                             {rate}
-                            </option>)
+                        </option>)
                         )}
                     </Field>
                 </Lebel>
@@ -77,7 +73,6 @@ const Form = ({ calculateResult, result }) => {
             <Button>
                 Przelicz!
             </Button>
-
             <Result>
                 Kwota:
                 {result !== undefined && (

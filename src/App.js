@@ -10,7 +10,7 @@ import { useState } from "react";
 
 function App() {
   const ratesData = useCurrencies();
-  
+
   const [result, setResult] = useState();
 
   const calculateResult = (amount, currency) => {
@@ -42,7 +42,6 @@ function App() {
             />
           )
         }
-
       })()}
       <Footer
         footerDateContent={"Kursy walut z dnia:"}
