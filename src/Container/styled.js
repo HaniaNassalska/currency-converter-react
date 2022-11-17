@@ -8,7 +8,7 @@ export const StyledContainer = styled.main`
     padding: 20px;
     border-style: solid;
     border-color: ${({theme})=> theme.colors.yellow};
-    margin: 40px auto;
+    margin: 10px auto;
     max-width: 800px;
 
 
@@ -20,7 +20,7 @@ export const StyledContainer = styled.main`
         padding: 20px;
         border-style: solid;
         border-color: ${({theme})=> theme.colors.yellow};
-        margin: 40px auto;
+        margin: 10px auto;
         max-width: 800px;
     }
 `

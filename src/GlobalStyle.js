@@ -15,7 +15,7 @@ body {
   background-image: url("${backgroundImage}");
   background-position: center;
   background-size: cover;
-  margin: 80px;
+  margin: 20px;
   word-break: break-word;
 }
 
