@@ -1,6 +1,9 @@
 # Currency-converter  💰 
 This is my next little project, in which you can convert Polish zloty to other currencies.
 I made it as one of the tasks during the Front-end developer course (youcode.pl), which I’ve been attending.
+## How does it looks like?
+![How does it looks like?](https://github.com/HaniaNassalska/currency-converter-react/blob/main/readme.gif)
+## [Demo version](https://hanianassalska.github.io/currency-converter-react/)
 ## Used technologies
 - Create React App
 - Java Script ES6+
@@ -9,9 +12,6 @@ I made it as one of the tasks during the Front-end developer course (youcode.pl)
 - Styled Components
 - Data imported from API
 - CSS Grid
-## How does it looks like?
-![How does it looks like?](https://github.com/HaniaNassalska/currency-converter-react/blob/main/readme.gif)
-## [Demo version](https://hanianassalska.github.io/currency-converter-react/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
