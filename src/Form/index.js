@@ -11,11 +11,8 @@ import {
     Amount
 } from "./styled";
 import { useState } from "react";
-import useCurrencies from "../useCurrencies";
 
-const Form = ({ calculateResult, result }) => {
-
-    const ratesData = useCurrencies();
+const Form = ({ calculateResult, result, ratesData }) => {
 
     const [currency, setCurrency] = useState("USD");
     const onSelectChange = ({ target }) => setCurrency(target.value);
