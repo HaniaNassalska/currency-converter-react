@@ -4,9 +4,11 @@ import axios from "axios";
 const useCurrencies = () => {
   const [ratesData, setRatesData] = useState({ state: "loading", })
   useEffect(() => {
+    
     const currenciesData = async () => {
       try {
-        const response = await axios.get("https://api.exchangerate.host/latest?base=PLN");
+        
+        const response = await axios.get("https://api.exchangerate.host/latest?base=PLN&${+new Date()}");
         const {date, rates} = await response.data;
 
         setRatesData({
