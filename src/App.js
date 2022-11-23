@@ -27,10 +27,10 @@ function App() {
       <Clock />
       <Header title={"Przelicz złotówki na dolary / euro / funty"} />
       {(() => {
-        if (ratesData.loading === true) {
+        if (ratesData.state === "loading") {
           return (
             <ExtraContentContainer text={"Trwa pobieranie danych. Poczekaj chwilę..."} />)
-        } else if (ratesData.error === true) {
+        } else if (ratesData.state === "error") {
           return (
             <ExtraContentContainer text={"Coś poszło nie tak. Spróbuj później..."} />
           )
@@ -39,6 +39,7 @@ function App() {
             <Form
               calculateResult={calculateResult}
               result={result}
+              ratesData={ratesData}
             />
           )
         }
