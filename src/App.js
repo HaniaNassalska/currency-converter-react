@@ -26,24 +26,21 @@ function App() {
     <Container>
       <Clock />
       <Header title={"Przelicz złotówki na dolary / euro / funty"} />
-      {(() => {
-        if (ratesData.state === "loading") {
-          return (
-            <ExtraContentContainer text={"Trwa pobieranie danych. Poczekaj chwilę..."} />)
-        } else if (ratesData.state === "error") {
-          return (
+      {ratesData.state === "loading" ?
+        (
+          <ExtraContentContainer text={"Trwa pobieranie danych. Poczekaj chwilę..."} />
+        ) : (
+          ratesData.state === "error") ?
+          (
             <ExtraContentContainer text={"Coś poszło nie tak. Spróbuj później..."} />
-          )
-        } else {
-          return (
+          ) : (
             <Form
               calculateResult={calculateResult}
               result={result}
               ratesData={ratesData}
             />
           )
-        }
-      })()}
+      }
       <Footer
         footerDateContent={"Kursy walut z dnia:"}
         footerDate={ratesData.date}
