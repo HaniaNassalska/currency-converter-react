@@ -26,7 +26,6 @@ function App() {
     <Container>
       <Clock />
       <Header title={"Przelicz złotówki na inne waluty"} />
-
       {ratesData.state === "loading" ?
         (
           <ExtraContentContainer text={"Trwa pobieranie danych. Poczekaj chwilę..."} />

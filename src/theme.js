@@ -3,7 +3,7 @@ const theme = {
         yellow: "yellow",
         black: "black",
         white: "white"
-            },
+    },
 
     breakpoint: {
         mobileMax: 767,
