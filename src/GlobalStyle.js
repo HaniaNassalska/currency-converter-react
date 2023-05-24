@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import backgroundImage from "./backgroundImage.png"
+import backgroundImage from "./backgroundImage.png";
 
 export const GlobaleStyle = createGlobalStyle`
 html {
@@ -25,4 +25,4 @@ body {
     margin: 15px;
   }
 }
-`
+`;
