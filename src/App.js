@@ -24,7 +24,7 @@ function App() {
   return (
     <Container>
       <Clock />
-      <Header title={"Przelicz złotówki na inne waluty"} />
+      <Header title={"Przelicz dolary na inne waluty"} />
       {ratesData.state === "loading" ? (
         <ExtraContentContainer
           text={"Trwa pobieranie danych. Poczekaj chwilę..."}
@@ -41,11 +41,7 @@ function App() {
         />
       )}
       <Footer
-        footerDateContent={"Kursy walut z dnia:"}
-        footerDate={ratesData.date}
-        footerExtraContent={
-          "Źródło danych: exchangerate.host (dostarczane dane walutowe pochodzą od dostawców danych finansowych oraz banków, w tym Europejskiego Banku Centralnego). "
-        }
+        footerExtraContent={"Źródło danych: exchangerate.host"}
       />
     </Container>
   );

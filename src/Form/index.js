@@ -30,14 +30,14 @@ const Form = ({ calculateResult, result, ratesData }) => {
         <Legend>Kalkulator walut</Legend>
         <Lebel>
           <LabelText>
-            Kwota w zł:
+            Kwota w dolarach:
             <Info>(pole obowiązkowe)</Info>
           </LabelText>
           <Field
             value={amount}
             onChange={onInputChange}
             type="number"
-            name="PLN"
+            name="USD"
             min="0"
             step="any"
             required

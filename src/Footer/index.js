@@ -1,9 +1,7 @@
 import { StyledFooter } from "./styled";
 
-const Footer = ({ footerDateContent, footerDate, footerExtraContent }) => (
+const Footer = ({ footerExtraContent }) => (
   <StyledFooter>
-    {footerDateContent} {footerDate}.
-    <br />
     {footerExtraContent}
   </StyledFooter>
 );
