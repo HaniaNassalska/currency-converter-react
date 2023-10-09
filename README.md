@@ -1,6 +1,5 @@
 # Currency-converter  💰 
 This is my next little project, in which you can convert USD to other currencies.
-I made it as one of the tasks during the Front-end developer course (youcode.pl), which I’ve been attending.
 ## What does it look like?
 ![What does it look like?](https://github.com/HaniaNassalska/currency-converter-react/blob/main/readme.gif)
 ## [Demo version](https://hanianassalska.github.io/currency-converter-react/)
